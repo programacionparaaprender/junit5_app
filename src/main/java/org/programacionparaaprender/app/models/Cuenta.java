@@ -15,5 +15,28 @@ public class Cuenta {
 		this.persona = persona;
 		this.saldo = saldo;
 	}
+	public void debito(BigDecimal monto){
+		Double resultado = this.saldo.doubleValue() - monto.doubleValue();
+		this.saldo = new BigDecimal(resultado.toString());
+	}
+
+	public void credito(BigDecimal monto){
+
+	}
 	
+	@Override
+	public String toString(){
+		return "persona: " + persona + " saldo: " + saldo.toString();
+	}
+
+	@Override
+	public boolean equals(Object obj){
+		if(obj == null || this.persona == null || this.saldo == null){
+			return false;
+		}
+		Cuenta cuenta = (Cuenta)obj;
+		
+		return this.persona.equalsIgnoreCase(cuenta.getPersona()) && this.saldo.equals(cuenta.getSaldo());
+	}
+
 }
