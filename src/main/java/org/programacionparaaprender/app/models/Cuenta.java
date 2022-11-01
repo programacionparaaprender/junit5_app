@@ -1,14 +1,19 @@
 package org.programacionparaaprender.app.models;
 
-import lombok.Data;
+
 import java.math.BigDecimal;
 
 import org.programacionparaaprender.app.exceptions.DineroInsuficienteException;
+
+import lombok.Data;
+
 
 @Data
 public class Cuenta {
 	private String persona;
 	private BigDecimal saldo;
+	private Banco banco;
+	
 	public Cuenta() {
 		
 	}
