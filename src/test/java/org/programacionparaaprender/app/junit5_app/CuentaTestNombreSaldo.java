@@ -11,7 +11,9 @@ import org.junit.jupiter.api.Test;
 import org.programacionparaaprender.app.exceptions.DineroInsuficienteException;
 import org.programacionparaaprender.app.models.Cuenta;
 import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Tag;
 
+@Tag("cuenta")
 @Nested
 public class CuentaTestNombreSaldo {
     Cuenta cuenta;
