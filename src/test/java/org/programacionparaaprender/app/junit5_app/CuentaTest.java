@@ -16,6 +16,29 @@ import org.programacionparaaprender.app.models.Cuenta;
 //@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class CuentaTest {
 	
+
+	
+
+	@Test
+	@Tag("pruebas")
+	@DisplayName("Probando nombre de la cuenta corriente 3!")
+	void testNombreCuenta3(TestInfo testInfo, TestReporter testReporter) {
+		testReporter.publishEntry("ejecutando " + testInfo.getDisplayName() + " " 
+		 + testInfo.getTestMethod().orElse(null).getName()
+		+ " con las etiquetas: " + testInfo.getTags());
+		//System.out.println("estamos repitiendo " + info.getCurrentRepetition());
+
+
+		Cuenta cuenta = new Cuenta("Andres", new BigDecimal(1000.12345));
+		cuenta.setPersona("Andres");
+		String esperado = "Andres";
+		String real = cuenta.getPersona();
+		Assertions.assertNotNull(real, "La cuenta no puede ser nula");
+		Assertions.assertEquals(esperado, real, "El nombre de la cuenta debe ser el que esperado");
+		Assertions.assertTrue(real.equalsIgnoreCase(esperado), "El valor debe se el esperado esperado");
+
+	}
+
 	@Test
 	@Tag("pruebas")
 	@DisplayName("Probando nombre de la cuenta corriente 2!")
